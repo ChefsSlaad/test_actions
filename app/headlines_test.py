@@ -13,19 +13,19 @@ def get_first_headline():
         return headline_tag.get_text(strip=True)
     return None
 
-def write_headline_to_file(filename, headline):
-    # Get current UTC time in the required format
+def append_headline_to_file(filename, headline):
+    # Current UTC timestamp in yyyy-mm-dd hh:mm:ss
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
     line = f"{timestamp} {headline}\n"
 
-    with open(filename, "w", encoding="utf-8") as f:
+    with open(filename, "a", encoding="utf-8") as f:
         f.write(line)
 
 def main():
     headline = get_first_headline()
     if headline:
         print("First headline:", headline)
-        write_headline_to_file("first_headline.txt", headline)
+        append_headline_to_file("first_headline.txt", headline)
     else:
         print("Could not find a headline on nu.nl")
 
