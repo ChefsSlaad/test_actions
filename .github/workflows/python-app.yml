@@ -22,7 +22,7 @@ jobs:
         run: pip install requests beautifulsoup4
 
       - name: Run headline fetch script
-        run: python headline_fetcher.py
+        run: python app/headlines_test.py
 
       - name: Commit and push headline log
         run: |
