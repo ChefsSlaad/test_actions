@@ -25,7 +25,7 @@ def main():
     headline = get_first_headline()
     if headline:
         print("First headline:", headline)
-        append_headline_to_file("first_headline.txt", headline)
+        append_headline_to_file("app/first_headline.txt", headline)
     else:
         print("Could not find a headline on nu.nl")
 
