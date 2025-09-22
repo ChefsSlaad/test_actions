@@ -5,6 +5,9 @@ on:
     - cron: "0 * * * *"   # every hour at minute 0 (UTC)
   workflow_dispatch:       # allow manual runs
 
+permissions:
+  contents: write   # allow pushing changes to the repo
+
 jobs:
   fetch-headline:
     runs-on: ubuntu-latest
